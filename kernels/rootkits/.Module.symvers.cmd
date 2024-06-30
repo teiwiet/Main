@@ -1,0 +1,1 @@
+savedcmd_/home/teiwiet/Main/code/kernels/rootkits/Module.symvers :=  scripts/mod/modpost -M -m       -o /home/teiwiet/Main/code/kernels/rootkits/Module.symvers -T /home/teiwiet/Main/code/kernels/rootkits/modules.order -i Module.symvers -e 
