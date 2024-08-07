@@ -12,4 +12,4 @@ _start:
 	mov eax,msg2
 	call print 
 
-	call quit 
+	call quit ; exit func
