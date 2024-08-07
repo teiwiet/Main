@@ -6,14 +6,13 @@ global _start
 
 _start:
 	mov eax,message 
-	mov ebx,eax
+	mov ebx,eax ;this is some thing else
 
 update:
 	cmp byte [eax],0
 	jz write_char 
 	inc eax 
 	jmp update
-
 write_char:
 	sub eax,ebx
 	mov edx,eax
