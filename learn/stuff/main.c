@@ -1,9 +1,7 @@
 #include<stdio.h>
-void add_one(int n){
-	n=n+1;
-}
+#include<unistd.h>
+#include<string.h>
 int main(){
-	int n = 10;
-	printf("%d",n);
-	printf("lmao");
+	char* lmao = "Hello World";
+	write(1,lmao,strlen(lmao));
 }

@@ -11,6 +11,11 @@ print:
 	mov ebx,1 
 	mov eax,4 
 	int 0x80
+
+	pop ebx 
+	pop ecx 
+	pop edx 
+	ret
 ; void calc str length 
 strlen:
 	push ebx 
@@ -24,7 +29,6 @@ finish:
 	sub eax,ebx 
 	pop ebx 
 	ret
-
 quit:
 	mov eax,1 
 	mov ebx,0 
