@@ -1,25 +1,32 @@
 section .data 
-message db "Hello World!, my name is Viet",0xA,0
+msg db "Hello World",0xa,0
 
-section .text 
-global _start
+section .text
+global start
+start:
+	mov eax,msg 
+	call strlen 
 
-_start:
-	mov eax,message 
-	mov ebx,eax ;this is some thing else
+	mov edx,eax 
+	mov ecx,msg
+	mov ebx,1 
+	mov eax,4 
+	int 0x80 
+exit:
+	mov eax,1 
+	mov ebx,0 
+	int 0x80
 
-update:
-	cmp byte [eax],0
-	jz write_char 
+strlen:
+	push ebx 
+	mov ebx,eax 
+
+next_char:
+	cmp byte[eax],0 
+	jz finished 
 	inc eax 
-	jmp update
-write_char:
-	sub eax,ebx
-	mov edx,eax
-	mov eax,4
-	mov ebx,1
-	mov ecx,message
-	int 0x80
-	mov eax,1
-	mov ebx,0
-	int 0x80
+	jmp next_char 
+finished:
+	sub eax,ebx 
+	pop ebx 
+	ret 
