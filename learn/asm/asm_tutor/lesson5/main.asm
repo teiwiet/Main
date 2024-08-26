@@ -1,15 +1,18 @@
-%include 'functions.asm'
+%include 'func.asm'
 
 section .data
-msg db "Hello World",0xa,0 
-msg1 db "Hello World no.2",0xa,0
-section .text
+msg1 db "Hello world!",0xa,0
+msg2 db "My name is teiwiet",0xa,0
+
+
+
+section .text 
 global _start
 _start:
-	mov eax,msg 
+	mov eax,msg1 
 	call print
-	 
-	mov eax,msg1
+	
+	mov eax,msg2 
 	call print
 
 	call exit
