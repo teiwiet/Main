@@ -1,1 +1,0 @@
-savedcmd_/home/teiwiet/Main/code/kernels/rootkits/main.mod := printf '%s\n'   main.o | awk '!x[$$0]++ { print("/home/teiwiet/Main/code/kernels/rootkits/"$$0) }' > /home/teiwiet/Main/code/kernels/rootkits/main.mod

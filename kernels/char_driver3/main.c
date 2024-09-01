@@ -17,7 +17,9 @@ ssize_t pcd_write(struct file* filp,const char* __user buff,size_t count,loff_t*
 	return 0;
 }
 
-ssize_t pcd_read(struct file* filp,char* __user buff,ssize_t count,loff_t* fpos){}
+ssize_t pcd_read(struct file* filp,char* __user buff,size_t count,loff_t* fpos){
+	return 0;
+}
 
 int pcd_open(struct inode* inode,struct file* filp){
 	return 0;
@@ -39,7 +41,7 @@ static int __init pcd_init(void){
 	printk(KERN_INFO "This is a very simple LKM by me :smiley face:");
 	ret = alloc_chrdev_region(&device_number,0,1,"pcd");
 	printk(KERN_INFO "the device successfully register with %d:%d",MAJOR(device_number),MINOR(device_number));
-	cdev_init(&pcd_cdev,&fops);
+	cdev_init(&pcd_cdev,&pcd_fops);
 	pcd_cdev.owner = THIS_MODULE;
 	cdev_add(&pcd_cdev,device_number,1);
 	return 0;
