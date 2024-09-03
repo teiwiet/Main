@@ -13,14 +13,12 @@ start:
 	jmp 0:step2 
 step2:
 	cli
-	mov ax,0
+	mov ax,0x00
 	mov ds,ax 
 	mov es,ax
 	mov ss,ax
 	mov sp,0x7c00 
 	sti 
-
-	jmp $
 
 load_protected:
 	cli 
@@ -59,8 +57,21 @@ gdt_descriptor:
 	dd gdt_start
 [BITS 32]
 load32:
+	mov ax,DATA_SEG 
+	mov ds,ax
+	mov es,ax
+	mov fs,ax 
+	mov gs,ax
+	mov ss,ax 
+	mov ebp,0x00200000
+	mov esp,ebp
+
+	;enable A20 line
+	in al,0x92 
+	or al,2 
+	out 0x92,al
 	jmp $
 times 510-($-$$) db 0 
-dw 0xaa55
+dw 0xAA55
 
 
