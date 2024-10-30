@@ -11,7 +11,7 @@ start:
 PrintMessage:
 	mov ah,0x13
 	mov al,1
-	mov bx,0xa
+	mov bx,0xb
 	xor dx,dx
 	mov bp,Message 
 	mov cx,MessageLen 
