@@ -53,7 +53,7 @@ protected_start:
 gdt_begin:
 gdt_null:
 	dd 0x00 
-	dd 0x00 
+	dd 0x00 ; something
 gdt_code_segment:
 	dw 0xffff 
 	dw 0x0000
