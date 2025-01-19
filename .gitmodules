@@ -4,6 +4,3 @@
 [submodule "kernels/char_driver"]
 	path = kernels/char_driver
 	url = https://github.com/teiwiet/char_driver
-[submodule "TeiOS3"]
-	path = TeiOS3
-	url = https://github.com/teiwiet/TeiOS3
