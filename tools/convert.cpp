@@ -2,6 +2,5 @@
 using namespace std;
 
 int main(int argc,char** argv){
-	cout << argv[1] << endl;
-	return 0;
+	cout << "\033[31mThis is a red text\033[0m";
 }
