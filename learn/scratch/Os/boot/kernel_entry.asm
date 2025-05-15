@@ -1,6 +1,6 @@
-[bits 32] 
-global _start 
+[bits 32]
+global _start
 _start:
-	[extern start] 
+	[extern start]
 	call start 
 	jmp $ 
