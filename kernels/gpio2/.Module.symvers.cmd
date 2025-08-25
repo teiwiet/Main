@@ -1,0 +1,1 @@
+savedcmd_/home/teiwiet/Main/kernels/gpio3/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/teiwiet/Main/kernels/gpio3/Module.symvers -T /home/teiwiet/Main/kernels/gpio3/modules.order -i Module.symvers -e 
