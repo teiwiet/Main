@@ -1,1 +1,0 @@
-savedcmd_/home/teiwiet/Main/kernels/gpio3/main.ko := ld -r -EL -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/arm/module.lds -o /home/teiwiet/Main/kernels/gpio3/main.ko /home/teiwiet/Main/kernels/gpio3/main.o /home/teiwiet/Main/kernels/gpio3/main.mod.o;  true
