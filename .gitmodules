@@ -4,6 +4,7 @@
 [submodule "learn/TeiOS3"]
 	path = learn/TeiOS3
 	url = https://github.com/teiwiet/TeiOS3
+
 [submodule "kernels"]
-    path = kernsls 
-    url = https://github.com/teiwiet/kernels
+	path = kernels
+	url = https://github.com/teiwiet/kernels
