@@ -33,7 +33,7 @@ int main() {
     while (true) {
         write_backlight(1); // 1 = tắt màn hình
         cout << "Đã tắt màn hình, chờ 10 giây...\n";
-        this_thread::sleep_for(chrono::seconds(10));
+        this_thread::sleep_for(chrono::seconds(1));
     }
 
     return 0;
