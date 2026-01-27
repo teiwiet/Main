@@ -8,10 +8,11 @@ times 33 db 0
 
 start:
 	cli 
+	; enable A20 line 
 	in al,0x92 
 	or al,2
 	out 0x92,al 
-
+	; 
 	mov eax,cr0 
 	or eax,1 
 	mov cr0,eax 
