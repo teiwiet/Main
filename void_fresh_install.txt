@@ -1,0 +1,12 @@
+## Update the system (first command to run) 
+* sudo xbps-install -Suv
+
+* sudo xbps-install -y \
+  thunar-archive-plugin \
+  file-roller \
+  xfce4-pulseaudio-plugin \
+  xfce4-whiskermenu-plugin
+
+## necessary font and icon for the machine 
+* sudo xbps-install -S noto-fonts-cjk noto-fonts-emoji
+
