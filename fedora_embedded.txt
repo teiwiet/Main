@@ -1,0 +1,7 @@
+sudo dnf install \
+  arm-none-eabi-gcc \
+  arm-none-eabi-newlib \
+  make \
+  openocd \
+  gdb
+Stm32cubemx : https://www.st.com/en/development-tools/stm32cubemx.html
