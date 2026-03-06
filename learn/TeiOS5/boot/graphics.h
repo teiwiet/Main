@@ -1,11 +1,10 @@
-#include <stddef.h>
-#include<stdint.h>
-#ifndef GRAPHICS_H 
+#ifndef GRAPHICS_H
 #define GRAPHICS_H
-#define VBEInfoAddress ((VBEInfoBlock*)0x8000)
+#define VBEInfoAddress (VBEInfoBlock*)0x8000
 #define ScreenBufferAddress 0xffff0
-typedef struct VBEInfoBlockStruct{
-	uint16_t attributes;		// deprecated, only bit 7 should be of interest to you, and it indicates the mode supports a linear frame buffer.
+#include<stdint.h>
+typedef struct{
+    uint16_t attributes;		// deprecated, only bit 7 should be of interest to you, and it indicates the mode supports a linear frame buffer.
 	uint8_t window_a;			// deprecated
 	uint8_t window_b;			// deprecated
 	uint16_t granularity;		// deprecated; used while calculating bank numbers
@@ -40,16 +39,18 @@ typedef struct VBEInfoBlockStruct{
 	uint32_t off_screen_mem_off;
 	uint16_t off_screen_mem_size;	// size of memory in the framebuffer but not being displayed on the screen
 	uint8_t reserved1[206];
-} VBEInfoBlock;
+}VBEInfoBlock;
+
 extern const int font_arial_width;
 extern const int font_arial_height;
 
-int getArialCharacter(int index, int y);
+
+int getArialCharacter(int index,int y);
 int rgb(int r,int g,int b);
 void Draw(int x,int y,int r,int g,int b);
 void ClearScreen(int r,int g,int b);
 void DrawRect(int x,int y,int width,int height,int r,int g,int b);
 void DrawCharacter(int (*f)(int,int),int x,int y,char character,int font_width,int font_height,int r,int g,int b);
-void DrawString(int (*f)(int,int),int x,int y,char* string,int font_width,int font_height,int r,int g,int b);
+void DrawString(int (*f)(int,int),int x,int y,char* string2Draw,int font_width,int font_height,int r,int g,int b);
 void Flush();
-#endif
+#endif 

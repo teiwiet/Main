@@ -1,15 +1,14 @@
-all: bootloader
-
-bootloader:
+qemu = qemu-system-x86_64 
+all:
+	mkdir -p boot/bin/
 	nasm boot/boot.asm -f bin -o boot/bin/boot.bin
-	nasm boot/kernel_entry.asm -f elf -o boot/bin/kernel_entry.o
-	
-	gcc -m32 -ffreestanding -c boot/final.c -o boot/bin/kernel.o
-	ld -m elf_i386 -o boot/bin/kernel.img -Ttext 0x1000 boot/bin/kernel_entry.o boot/bin/kernel.o
-
+	nasm boot/kernel_entry.asm -f elf -o boot/bin/kernel_entry.bin
+	gcc boot/final.c -m32 -ffreestanding -c  -o boot/bin/kernel.o
+	ld -m elf_i386 -o boot/bin/kernel.img -Ttext 0x1000 boot/bin/kernel_entry.bin boot/bin/kernel.o
 	objcopy -O binary -j .text boot/bin/kernel.img boot/bin/kernel.bin
 	cat boot/bin/boot.bin boot/bin/kernel.bin > os.img
-clear:
-	rm -f boot/boot.img
+clean:
+	rm os.img
+	rm boot/bin/*
 run:
-	qemu-system-x86_64 -drive format=raw,file=os.img
+	$(qemu) -drive format=raw,file=os.img
