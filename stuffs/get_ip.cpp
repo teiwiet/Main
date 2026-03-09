@@ -16,7 +16,6 @@ std::string get_ip() {
     if (!result.empty() && result.back() == '\n') result.pop_back();
     return result;
 }
-
 int main(){
     cout << get_ip();
 }
